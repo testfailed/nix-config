@@ -15,21 +15,57 @@
 }: {
   default = pkgs.mkShell {
     NIX_CONFIG = "extra-experimental-features = nix-command flakes repl-flake";
-    nativeBuildInputs = builtins.attrValues {
-      inherit (pkgs)
-        # Required for pre-commit hook 'nixpkgs-fmt' only on Darwin
-        # REF: <https://discourse.nixos.org/t/nix-shell-rust-hello-world-ld-linkage-issue/17381/4>
-        libiconv
+    nativeBuildInputs = builtins.attrValues
+      {
+        inherit (pkgs)
+          # NOTE: Required for building 'nixpkgs-fmt' pre-commit hook on Darwin
+          # REF: <https://discourse.nixos.org/t/nix-shell-rust-hello-world-ld-linkage-issue/17381/4>
+          libiconv
 
-        nix
-        home-manager
-        git
-        just
-        pre-commit
+          # Bootstrap packages
+          direnv
+          home-manager
+          nil
+          nix
+          nixpkgs-fmt
+          pre-commit
 
-        age
-        ssh-to-age
-        sops;
-    };
+          # Core utilities
+          bat
+          coreutils-full
+          coreutils-prefixed
+          curl
+          delta
+          eza
+          fd
+          fzf
+          git
+          htop
+          jq
+          just
+          less
+          man
+          neovim
+          ripgrep
+
+          # sop-nix related
+          age
+          gnupg
+          openssh
+          sops
+          ssh-to-age
+
+          # Toolchains
+          rustc
+          cargo
+          ;
+      } ++ [
+      pkgs.bat-extras.batdiff
+      pkgs.bat-extras.batgrep
+      pkgs.bat-extras.batman
+      pkgs.bat-extras.batpipe
+      pkgs.bat-extras.batwatch
+      pkgs.bat-extras.prettybat
+    ];
   };
 }

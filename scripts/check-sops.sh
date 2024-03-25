@@ -2,6 +2,7 @@
 set -euo pipefail
 
 # FIXME: Make this better
+# FIXME: journalctl: command not found on Darwin
 sops_result=$(journalctl --no-pager --no-hostname --since "10 minutes ago" |
 	tac |
 	awk '!flag; /Starting sops-nix activation/{flag = 1};' |

@@ -142,24 +142,6 @@
         "type": "github"
       }
     },
-    "mysecrets": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1709835936,
-        "narHash": "sha256-2I6ByF+WEIKuamMfIx7FlJM72Web0Rqt1zJw3DwE4zM=",
-        "ref": "main",
-        "rev": "c94f461dc17df6dea5631b0c5ce2f3338b094677",
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@gitlab.com/emergentmind/nix-secrets.git"
-      },
-      "original": {
-        "ref": "main",
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@gitlab.com/emergentmind/nix-secrets.git"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1708105575,
@@ -292,7 +274,6 @@
         "disko": "disko",
         "hardware": "hardware",
         "home-manager": "home-manager",
-        "mysecrets": "mysecrets",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",

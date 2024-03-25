@@ -51,12 +51,12 @@
 
     #################### Personal Repositories ####################
 
-    # Private secrets repo.  See ./docs/secretsmgmt.md
-    # Authenticate via ssh and use shallow clone
-    mysecrets = {
-      url = "git+ssh://git@gitlab.com/emergentmind/nix-secrets.git?ref=main&shallow=1";
-      flake = false;
-    };
+    # # Private secrets repo.  See ./docs/secretsmgmt.md
+    # # Authenticate via ssh and use shallow clone
+    # mysecrets = {
+    #   url = "git+ssh://git@gitlab.com/emergentmind/nix-secrets.git?ref=main&shallow=1";
+    #   flake = false;
+    # };
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
